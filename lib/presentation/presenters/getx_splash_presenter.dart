@@ -8,14 +8,14 @@ import '../mixins/mixins.dart';
 class GetxSplashPresenter extends GetxController
     with NavigationManager
     implements SplashPresenter {
-  final LoadTasks loadTasks;
+  final LoadTasks loadLocalTasks;
 
-  GetxSplashPresenter({@required this.loadTasks});
+  GetxSplashPresenter({@required this.loadLocalTasks});
 
-  Future<void> checkAccount({int durationInSeconds = 2}) async {
+  Future<void> loadTasks({int durationInSeconds = 2}) async {
     await Future.delayed(Duration(seconds: durationInSeconds));
     try {
-      await loadTasks.load();
+      await loadLocalTasks.load();
       navigateTo = '/home';
     } catch (error) {
       navigateTo = '/home';

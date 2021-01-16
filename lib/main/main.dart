@@ -22,7 +22,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(),
+      body: Center(
+        child: Text('ToDo'),
+      ),
     );
   }
 }

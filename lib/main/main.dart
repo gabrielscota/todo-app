@@ -12,6 +12,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+    SystemChrome.setEnabledSystemUIOverlays([]);
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     final routeObserver = Get.put<RouteObserver>(RouteObserver<PageRoute>());
 

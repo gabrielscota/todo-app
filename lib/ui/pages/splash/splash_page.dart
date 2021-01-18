@@ -13,7 +13,6 @@ class SplashPage extends StatelessWidget with NavigationManager {
     presenter.loadTasks();
 
     return Scaffold(
-      appBar: AppBar(title: Text('ToDo')),
       body: Builder(
         builder: (context) {
           handleNavigation(presenter.navigateToStream, clear: true);

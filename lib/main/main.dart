@@ -12,6 +12,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     final routeObserver = Get.put<RouteObserver>(RouteObserver<PageRoute>());
 
     return GetMaterialApp(
@@ -21,7 +22,8 @@ class App extends StatelessWidget {
       initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: makeSplashPage, transition: Transition.fade),
-        GetPage(name: '/home', page: makeHomePage, transition: Transition.fadeIn),
+        GetPage(
+            name: '/home', page: makeHomePage, transition: Transition.fadeIn),
       ],
     );
   }

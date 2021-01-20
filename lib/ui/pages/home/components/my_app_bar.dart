@@ -16,7 +16,7 @@ class MyAppBar extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         children: [
           Container(
-            padding: EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(12.0),
             child: Icon(
               Icons.menu_rounded,
               size: 24,
@@ -56,7 +56,7 @@ class MyAppBar extends StatelessWidget {
             ],
           ),
           Container(
-            padding: EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(12.0),
             child: Icon(
               Icons.calendar_today_rounded,
               size: 24,

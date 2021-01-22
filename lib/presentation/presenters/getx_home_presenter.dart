@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:meta/meta.dart';
 
 import '../../domain/usecases/usecases.dart';
@@ -16,14 +17,39 @@ class GetxHomePresenter extends GetxController
     @required this.loadProjects,
   });
 
-  Stream<List<ProjectViewModel>> projectsStream;
-  Stream<List<TaskViewModel>> tasksStream;
+  final _tasks = Rx<List<TaskViewModel>>();
+  final _projects = Rx<List<ProjectViewModel>>();
 
-  @override
-  Future<void> loadProjectsData() async {}
+  Stream<List<TaskViewModel>> get tasksStream => _tasks.stream;
+  Stream<List<ProjectViewModel>> get projectsStream => _projects.stream;
 
-  @override
-  Future<void> loadTasksData() async {}
+  Future<void> loadTasksData() async {
+    try {
+      final tasks = await loadTasks.load();
+      _tasks.value = tasks
+          .map((task) => TaskViewModel(
+                id: task.id,
+                title: task.title,
+                date: DateFormat(DateFormat.YEAR_MONTH_DAY, 'pt_Br')
+                    .format(task.date),
+                checked: task.checked,
+              ))
+          .toList();
+    } catch (e) {}
+  }
+
+  Future<void> loadProjectsData() async {
+    try {
+      final projects = await loadProjects.load();
+      _projects.value = projects
+          .map((project) => ProjectViewModel(
+                id: project.id,
+                name: project.name,
+                color: project.color,
+              ))
+          .toList();
+    } catch (e) {}
+  }
 
   void goToTask(String taskId) {
     navigateTo = '/task/$taskId';

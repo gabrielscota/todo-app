@@ -2,8 +2,8 @@ import './task_viewmodel.dart';
 import './project_viewmodel.dart';
 
 abstract class HomePresenter {
-  Stream<List<TaskViewModel>> tasksStream;
-  Stream<List<ProjectViewModel>> projectsStream;
+  Stream<List<TaskViewModel>> get tasksStream;
+  Stream<List<ProjectViewModel>> get projectsStream;
   Stream<String> get navigateToStream;
 
   Future<void> loadTasksData();

@@ -32,7 +32,7 @@ class _AddTaskState extends State<AddTask> {
     isAddingTask = value;
     widget.handleAddingTask(value);
     if (value == false) {
-      await Future.delayed(Duration(milliseconds: 800));
+      await Future.delayed(Duration(milliseconds: 500));
     }
     showNoteButton = value;
     setState(() {});

@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> with NavigationManager {
                       Name(),
                       Projects(),
                       Tasks(),
-                      SizedBox(height: 64),
+                      SizedBox(height: MediaQuery.of(context).size.height * 0.18),
                     ],
                   ),
                 ),

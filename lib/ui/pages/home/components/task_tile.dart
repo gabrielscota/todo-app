@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TaskTile extends StatelessWidget {
@@ -18,7 +19,12 @@ class TaskTile extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
         child: Row(
           children: [
-            Icon(Icons.check_box_rounded),
+            SvgPicture.asset(
+              'lib/ui/assets/icons/checkbox.svg',
+              height: 24,
+              width: 24,
+              color: Color.fromRGBO(25, 44, 93, 1.0),
+            ),
             SizedBox(width: 8.0),
             Text(
               'Ir ao mercado',

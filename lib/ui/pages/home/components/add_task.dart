@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AddTask extends StatefulWidget {
@@ -41,7 +42,11 @@ class _AddTaskState extends State<AddTask> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(
-          left: 12.0, top: 24.0, right: 12.0, bottom: 24.0),
+        left: 12.0,
+        top: 24.0,
+        right: 12.0,
+        bottom: 24.0,
+      ),
       decoration: BoxDecoration(
         gradient: isAddingTask
             ? LinearGradient(
@@ -121,7 +126,12 @@ class _AddTaskState extends State<AddTask> {
                                     color: Color.fromRGBO(252, 252, 252, 1.0),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                  child: Icon(Icons.calendar_today, size: 16),
+                                  child: SvgPicture.asset(
+                                    'lib/ui/assets/icons/calendar_clean.svg',
+                                    height: 16,
+                                    width: 16,
+                                    color: Color.fromRGBO(25, 44, 93, 1.0),
+                                  ),
                                 ),
                               ),
                               SizedBox(width: 4),
@@ -158,14 +168,20 @@ class _AddTaskState extends State<AddTask> {
                                             left: 6.0, right: 16),
                                         child: Text(
                                           'Geral',
-                                          style: TextStyle(
+                                          style: GoogleFonts.quicksand(
                                             fontSize: 12,
-                                            fontWeight: FontWeight.w400,
+                                            fontWeight: FontWeight.w500,
+                                            color:
+                                                Color.fromRGBO(25, 44, 93, 1.0),
                                           ),
                                         ),
                                       ),
-                                      Icon(Icons.arrow_circle_down_outlined,
-                                          size: 16),
+                                      SvgPicture.asset(
+                                        'lib/ui/assets/icons/chevron_down.svg',
+                                        height: 16,
+                                        width: 16,
+                                        color: Color.fromRGBO(25, 44, 93, 1.0),
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -199,10 +215,11 @@ class _AddTaskState extends State<AddTask> {
                     ),
                   ],
                 ),
-                child: Icon(
-                  Icons.short_text_rounded,
-                  size: 24.0,
-                  color: Color.fromRGBO(58, 58, 58, 1.0),
+                child: SvgPicture.asset(
+                  'lib/ui/assets/icons/note.svg',
+                  height: 24,
+                  width: 24,
+                  color: Color.fromRGBO(25, 44, 93, 1.0),
                 ),
               ),
             ),

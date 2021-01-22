@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyAppBar extends StatelessWidget {
@@ -17,9 +18,10 @@ class MyAppBar extends StatelessWidget {
         children: [
           Container(
             padding: EdgeInsets.all(12.0),
-            child: Icon(
-              Icons.menu_rounded,
-              size: 24,
+            child: SvgPicture.asset(
+              'lib/ui/assets/icons/menu.svg',
+              height: 24,
+              width: 24,
               color: Color.fromRGBO(25, 44, 93, 1.0),
             ),
             decoration: BoxDecoration(
@@ -57,9 +59,10 @@ class MyAppBar extends StatelessWidget {
           ),
           Container(
             padding: EdgeInsets.all(12.0),
-            child: Icon(
-              Icons.calendar_today_rounded,
-              size: 24,
+            child: SvgPicture.asset(
+              'lib/ui/assets/icons/calendar.svg',
+              height: 24,
+              width: 24,
               color: Color.fromRGBO(25, 44, 93, 1.0),
             ),
             decoration: BoxDecoration(

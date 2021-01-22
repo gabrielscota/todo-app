@@ -13,6 +13,7 @@ dependencies:
     sdk: flutter
   carousel_slider: ^2.3.1
   equatable: ^1.2.5
+  flutter_svg: ^0.19.1
   get: ^3.24.0
   google_fonts: ^1.1.1
   http: ^0.12.2
@@ -27,3 +28,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - lib/ui/assets/icons/

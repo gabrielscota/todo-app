@@ -1,3 +1,4 @@
+import 'package:ToDo/ui/helpers/helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -94,7 +95,7 @@ class _HomePageState extends State<HomePage> with NavigationManager {
                                           padding: const EdgeInsets.symmetric(
                                               vertical: 24.0),
                                           child: Text(
-                                            'Parece que você ainda não tem nenhuma tarefa, que tal criarmos a primeira?',
+                                            R.string.emptyTasks,
                                             style: GoogleFonts.quicksand(
                                               fontSize: 16,
                                               fontWeight: FontWeight.w500,

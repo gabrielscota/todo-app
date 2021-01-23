@@ -4,3 +4,4 @@ linter:
   rules:
     annotate_overrides: false
     directives_ordering: true
+    lines_longer_than_80_chars: false

@@ -90,7 +90,8 @@ class ProjectCard extends StatelessWidget {
                             value: 0.15,
                             valueColor:
                                 AlwaysStoppedAnimation<Color>(Colors.red[400]),
-                            backgroundColor: const Color.fromRGBO(250, 250, 250, 1.0),
+                            backgroundColor:
+                                const Color.fromRGBO(250, 250, 250, 1.0),
                           ),
                         ),
                       ),

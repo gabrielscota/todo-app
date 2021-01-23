@@ -4,10 +4,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AddTask extends StatefulWidget {
   final Function handleAddingTask;
+  final FocusNode focusNode;
+
   AddTask({
-    Key key,
     @required this.handleAddingTask,
-  }) : super(key: key);
+    this.focusNode,
+  });
 
   @override
   _AddTaskState createState() => _AddTaskState();
@@ -15,15 +17,14 @@ class AddTask extends StatefulWidget {
 
 class _AddTaskState extends State<AddTask> {
   final taskController = TextEditingController();
-  final focusNode = FocusNode();
 
   bool isAddingTask = false;
   bool showNoteButton = false;
 
   @override
   void initState() {
-    focusNode.addListener(() {
-      focusNode.hasFocus ? handleAddingTask(true) : handleAddingTask(false);
+    widget.focusNode.addListener(() {
+      widget.focusNode.hasFocus ? handleAddingTask(true) : handleAddingTask(false);
     });
     super.initState();
   }
@@ -96,7 +97,7 @@ class _AddTaskState extends State<AddTask> {
                       maxLines: isAddingTask ? 3 : 1,
                       minLines: 1,
                       textInputAction: TextInputAction.done,
-                      focusNode: focusNode,
+                      focusNode: widget.focusNode,
                       controller: taskController,
                       textAlignVertical: TextAlignVertical.center,
                       cursorColor: Color.fromRGBO(58, 58, 58, 1.0),

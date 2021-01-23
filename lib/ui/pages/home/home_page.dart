@@ -18,6 +18,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> with NavigationManager {
   bool isAddingTask = false;
+  FocusNode focusNode = FocusNode();
 
   void handleAddingTask(bool value) {
     setState(() => isAddingTask = value);
@@ -85,18 +86,40 @@ class _HomePageState extends State<HomePage> with NavigationManager {
                                           children: [
                                             SvgPicture.asset(
                                               'lib/ui/assets/illustrations/add_notes.svg',
-                                              width: MediaQuery.of(context).size.width * 0.5,
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.5,
                                               fit: BoxFit.fitWidth,
                                             ),
                                             Padding(
-                                              padding: const EdgeInsets.symmetric(vertical: 24.0),
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      vertical: 24.0),
                                               child: Text(
                                                 'Parece que você ainda não tem nenhuma tarefa, que tal criarmos a primeira?',
                                                 style: GoogleFonts.quicksand(
                                                   fontSize: 16,
                                                   fontWeight: FontWeight.w500,
                                                   color: Color.fromRGBO(
-                                                      25, 44, 93, 1.0),
+                                                      110, 119, 142, 1.0),
+                                                ),
+                                                textAlign: TextAlign.center,
+                                              ),
+                                            ),
+                                            InkWell(
+                                              onTap: focusNode.requestFocus,
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              highlightColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              child: Text(
+                                                'Criar nova tarefa',
+                                                style: GoogleFonts.quicksand(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: Color.fromRGBO(
+                                                      42, 92, 222, 1.0),
                                                 ),
                                                 textAlign: TextAlign.center,
                                               ),
@@ -140,7 +163,7 @@ class _HomePageState extends State<HomePage> with NavigationManager {
                         left: 0,
                         right: 0,
                         bottom: 0,
-                        child: AddTask(handleAddingTask: handleAddingTask),
+                        child: AddTask(handleAddingTask: handleAddingTask, focusNode: focusNode),
                       ),
                     ],
                   ),

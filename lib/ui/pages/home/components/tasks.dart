@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../home.dart';
 import './components.dart';
 
 class Tasks extends StatelessWidget {
-  const Tasks({
-    Key key,
-  }) : super(key: key);
+  final HomePresenter presenter;
+
+  Tasks({this.presenter});
 
   @override
   Widget build(BuildContext context) {
@@ -27,14 +28,14 @@ class Tasks extends StatelessWidget {
             textAlign: TextAlign.start,
           ),
         ),
-        Padding(
+        Container(
+          height: MediaQuery.of(context).size.height * 0.25,
+          width: MediaQuery.of(context).size.width,
           padding: EdgeInsets.only(left: 24.0, right: 24.0, bottom: 16.0),
-          child: Column(
-            children: [
-              TaskTile(),
-              TaskTile(),
-              TaskTile(),
-            ],
+          child: ListView.builder(
+            itemCount: 3,
+            itemBuilder: (context, index) => TaskTile(),
+            physics: NeverScrollableScrollPhysics(),
           ),
         ),
       ],

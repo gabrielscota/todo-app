@@ -15,9 +15,9 @@ class ProjectCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: 20,
+            width: 16,
             decoration: BoxDecoration(
-              color: Colors.red,
+              color: Colors.red[400],
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(12.0),
                 bottomLeft: Radius.circular(12.0),
@@ -91,7 +91,7 @@ class ProjectCard extends StatelessWidget {
                             minHeight: 10,
                             value: 0.15,
                             valueColor:
-                                AlwaysStoppedAnimation<Color>(Colors.red),
+                                AlwaysStoppedAnimation<Color>(Colors.red[400]),
                             backgroundColor: Color.fromRGBO(250, 250, 250, 1.0),
                           ),
                         ),

@@ -34,9 +34,11 @@ class Projects extends StatelessWidget {
               height: 140,
               enlargeCenterPage: true,
               viewportFraction: 0.65,
+              enableInfiniteScroll: false,
             ),
             items: [
               ProjectCard(),
+              NewProjectCard(),
             ],
           ),
         ),

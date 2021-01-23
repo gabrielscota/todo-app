@@ -8,5 +8,6 @@ abstract class HomePresenter {
 
   Future<void> loadTasksData();
   Future<void> loadProjectsData();
+  Future<void> saveTask(String task);
   void goToTask(String taskId);
 }

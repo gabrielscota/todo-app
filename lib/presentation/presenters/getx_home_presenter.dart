@@ -35,7 +35,7 @@ class GetxHomePresenter extends GetxController
                 checked: task.checked,
               ))
           .toList();
-    // ignore: empty_catches
+      // ignore: empty_catches
     } catch (e) {}
   }
 
@@ -49,7 +49,22 @@ class GetxHomePresenter extends GetxController
                 color: project.color,
               ))
           .toList();
-    // ignore: empty_catches
+      // ignore: empty_catches
+    } catch (e) {}
+  }
+
+  Future<void> saveTask(String task) async {
+    try {
+      if (_tasks.value == null) {
+        final List<TaskViewModel> tasks = [];
+        tasks.add(TaskViewModel(id: '1', title: task));
+        _tasks.subject.add(tasks);
+      } else {
+        final tasks = _tasks.subject.value;
+        tasks.add(TaskViewModel(id: '1', title: task));
+        _tasks.subject.add(tasks);
+      }
+      // ignore: empty_catches
     } catch (e) {}
   }
 

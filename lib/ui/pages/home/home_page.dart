@@ -162,8 +162,10 @@ class _HomePageState extends State<HomePage> with NavigationManager {
                         right: 0,
                         bottom: 0,
                         child: AddTask(
-                            handleAddingTask: handleAddingTask,
-                            focusNode: focusNode),
+                          presenter: widget.presenter,
+                          handleAddingTask: handleAddingTask,
+                          focusNode: focusNode,
+                        ),
                       ),
                     ],
                   ),

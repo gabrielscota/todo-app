@@ -2,13 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../home.dart';
+
 class AddTask extends StatefulWidget {
+  final HomePresenter presenter;
   final Function handleAddingTask;
   final FocusNode focusNode;
 
   const AddTask({
+    @required this.presenter,
     @required this.handleAddingTask,
-    this.focusNode,
+    @required this.focusNode,
   });
 
   @override
@@ -33,7 +37,7 @@ class _AddTaskState extends State<AddTask> {
 
   Future<void> handleAddingTask({bool value}) async {
     isAddingTask = value;
-    widget.handleAddingTask(value);
+    widget.handleAddingTask(value: value);
     if (value == false) {
       await Future.delayed(const Duration(milliseconds: 500));
     }
@@ -88,25 +92,28 @@ class _AddTaskState extends State<AddTask> {
                     ),
                     padding: const EdgeInsets.fromLTRB(12.0, 0.0, 12.0, 0.0),
                     child: TextFormField(
-                      decoration: const InputDecoration(
-                        alignLabelWithHint: true,
-                        border: InputBorder.none,
-                        contentPadding: EdgeInsets.symmetric(vertical: 16.0),
-                        hintText: 'Adicione uma nova tarefa..',
-                      ),
-                      maxLines: isAddingTask ? 3 : 1,
-                      minLines: 1,
-                      textInputAction: TextInputAction.done,
-                      focusNode: widget.focusNode,
-                      controller: taskController,
-                      textAlignVertical: TextAlignVertical.center,
-                      cursorColor: const Color.fromRGBO(58, 58, 58, 1.0),
-                      style: GoogleFonts.quicksand(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w500,
-                        color: const Color.fromRGBO(58, 58, 58, 1.0),
-                      ),
-                    ),
+                        decoration: const InputDecoration(
+                          alignLabelWithHint: true,
+                          border: InputBorder.none,
+                          contentPadding: EdgeInsets.symmetric(vertical: 16.0),
+                          hintText: 'Adicione uma nova tarefa..',
+                        ),
+                        maxLines: isAddingTask ? 3 : 1,
+                        minLines: 1,
+                        textInputAction: TextInputAction.done,
+                        focusNode: widget.focusNode,
+                        controller: taskController,
+                        textAlignVertical: TextAlignVertical.center,
+                        cursorColor: const Color.fromRGBO(58, 58, 58, 1.0),
+                        style: GoogleFonts.quicksand(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          color: const Color.fromRGBO(58, 58, 58, 1.0),
+                        ),
+                        onFieldSubmitted: (value) {
+                          widget.presenter.saveTask(value);
+                          taskController.clear();
+                        }),
                   ),
                   if (isAddingTask)
                     Positioned(

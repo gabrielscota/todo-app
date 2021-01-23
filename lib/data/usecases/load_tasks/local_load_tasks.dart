@@ -41,8 +41,8 @@ class LocalLoadTasks implements LoadTasks {
   }
 
   List<TaskEntity> _mapToEntity(dynamic list) => list
-      .map<TaskEntity>((json) => LocalTaskModel.fromJson(json).toEntity())
-      .toList();
+      .map<TaskEntity>((json) => LocalTaskModel.fromJson(json as Map).toEntity())
+      .toList() as List<TaskEntity>;
 
   List<Map> _mapToJson(List<TaskEntity> list) =>
       list.map((entity) => LocalTaskModel.fromEntity(entity).toJson()).toList();

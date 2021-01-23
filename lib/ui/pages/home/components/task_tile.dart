@@ -23,19 +23,19 @@ class TaskTile extends StatelessWidget {
               'lib/ui/assets/icons/checkbox.svg',
               height: 24,
               width: 24,
-              color: Color.fromRGBO(25, 44, 93, 1.0),
+              color: const Color.fromRGBO(25, 44, 93, 1.0),
             ),
-            SizedBox(width: 8.0),
+            const SizedBox(width: 8.0),
             Text(
               'Ir ao mercado',
               style: GoogleFonts.quicksand(
                 fontSize: 14,
                 fontWeight: FontWeight.w500,
-                color: Color.fromRGBO(110, 119, 142, 1.0),
+                color: const Color.fromRGBO(110, 119, 142, 1.0),
               ),
               textAlign: TextAlign.start,
             ),
-            Spacer(),
+            const Spacer(),
             Container(
               width: 12,
               height: 12,

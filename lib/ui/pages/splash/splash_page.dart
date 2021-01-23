@@ -17,7 +17,7 @@ class SplashPage extends StatelessWidget with NavigationManager {
         builder: (context) {
           handleNavigation(presenter.navigateToStream, clear: true);
 
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(
                 Color.fromRGBO(58, 58, 58, 1.0),

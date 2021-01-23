@@ -8,7 +8,7 @@ class ProjectViewModel extends Equatable {
 
   List get props => [id, name, color];
 
-  ProjectViewModel({
+  const ProjectViewModel({
     @required this.id,
     @required this.name,
     @required this.color,

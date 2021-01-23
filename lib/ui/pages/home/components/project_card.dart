@@ -7,7 +7,7 @@ class ProjectCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 1.0,
-      shadowColor: Color.fromRGBO(58, 58, 58, 0.1),
+      shadowColor: const Color.fromRGBO(58, 58, 58, 0.1),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12.0),
       ),
@@ -18,7 +18,7 @@ class ProjectCard extends StatelessWidget {
             width: 16,
             decoration: BoxDecoration(
               color: Colors.red[400],
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(12.0),
                 bottomLeft: Radius.circular(12.0),
               ),
@@ -33,7 +33,6 @@ class ProjectCard extends StatelessWidget {
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,7 +43,7 @@ class ProjectCard extends StatelessWidget {
                             style: GoogleFonts.quicksand(
                               fontSize: 20,
                               fontWeight: FontWeight.w500,
-                              color: Color.fromRGBO(25, 44, 93, 1.0),
+                              color: const Color.fromRGBO(25, 44, 93, 1.0),
                             ),
                             textAlign: TextAlign.start,
                           ),
@@ -54,7 +53,7 @@ class ProjectCard extends StatelessWidget {
                               'lib/ui/assets/icons/edit.svg',
                               height: 24,
                               width: 24,
-                              color: Color.fromRGBO(110, 119, 142, 1.0),
+                              color: const Color.fromRGBO(110, 119, 142, 1.0),
                             ),
                           ),
                         ],
@@ -64,7 +63,7 @@ class ProjectCard extends StatelessWidget {
                         style: GoogleFonts.quicksand(
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
-                          color: Color.fromRGBO(110, 119, 142, 1.0),
+                          color: const Color.fromRGBO(110, 119, 142, 1.0),
                         ),
                         textAlign: TextAlign.start,
                       ),
@@ -72,14 +71,13 @@ class ProjectCard extends StatelessWidget {
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
                         '15% concluído',
                         style: GoogleFonts.quicksand(
                           fontSize: 12,
                           fontWeight: FontWeight.w500,
-                          color: Color.fromRGBO(110, 119, 142, 1.0),
+                          color: const Color.fromRGBO(110, 119, 142, 1.0),
                         ),
                         textAlign: TextAlign.start,
                       ),
@@ -92,7 +90,7 @@ class ProjectCard extends StatelessWidget {
                             value: 0.15,
                             valueColor:
                                 AlwaysStoppedAnimation<Color>(Colors.red[400]),
-                            backgroundColor: Color.fromRGBO(250, 250, 250, 1.0),
+                            backgroundColor: const Color.fromRGBO(250, 250, 250, 1.0),
                           ),
                         ),
                       ),

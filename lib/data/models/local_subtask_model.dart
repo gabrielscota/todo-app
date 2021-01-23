@@ -18,9 +18,9 @@ class LocalSubTaskModel {
       throw Exception();
     }
     return LocalSubTaskModel(
-      id: json['id'],
-      title: json['title'],
-      checked: json['checked'],
+      id: json['id'].toString(),
+      title: json['title'].toString(),
+      checked: json['checked'] as bool,
     );
   }
 

@@ -14,7 +14,7 @@ class TaskEntity extends Equatable {
 
   List get props => [id, title, project, date, note, subTasks, checked];
 
-  TaskEntity({
+  const TaskEntity({
     @required this.id,
     @required this.title,
     @required this.project,

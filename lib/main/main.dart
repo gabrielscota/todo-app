@@ -21,10 +21,19 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       navigatorObservers: [routeObserver],
       initialRoute: '/',
-      getPages: [
-        GetPage(name: '/', page: makeSplashPage, transition: Transition.fade),
+      getPages: const [
         GetPage(
-            name: '/home', page: makeHomePage, transition: Transition.fadeIn),
+          name: '/',
+          page: makeSplashPage,
+          transition: Transition.fade,
+          transitionDuration: Duration(milliseconds: 300),
+        ),
+        GetPage(
+          name: '/home',
+          page: makeHomePage,
+          transition: Transition.fadeIn,
+          transitionDuration: Duration(milliseconds: 500),
+        ),
       ],
     );
   }

@@ -10,7 +10,7 @@ class TaskViewModel extends Equatable {
 
   List get props => [id, title, date, checked];
 
-  TaskViewModel({
+  const TaskViewModel({
     @required this.id,
     @required this.title,
     this.date,

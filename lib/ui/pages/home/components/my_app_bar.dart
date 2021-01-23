@@ -12,29 +12,26 @@ class MyAppBar extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 16.0),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        mainAxisSize: MainAxisSize.max,
         children: [
           Container(
-            padding: EdgeInsets.all(12.0),
+            padding: const EdgeInsets.all(12.0),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12.0),
+              color: Colors.white,
+              boxShadow: const [
+                BoxShadow(
+                  offset: Offset(4.0, 4.0),
+                  blurRadius: 10,
+                  color: Color.fromRGBO(58, 58, 58, 0.05),
+                ),
+              ],
+            ),
             child: SvgPicture.asset(
               'lib/ui/assets/icons/menu.svg',
               height: 24,
               width: 24,
-              color: Color.fromRGBO(25, 44, 93, 1.0),
-            ),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12.0),
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  offset: Offset(4.0, 4.0),
-                  blurRadius: 10,
-                  spreadRadius: 0,
-                  color: Color.fromRGBO(58, 58, 58, 0.05),
-                ),
-              ],
+              color: const Color.fromRGBO(25, 44, 93, 1.0),
             ),
           ),
           Column(
@@ -44,7 +41,7 @@ class MyAppBar extends StatelessWidget {
                 style: GoogleFonts.quicksand(
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
-                  color: Color.fromRGBO(25, 44, 93, 1.0),
+                  color: const Color.fromRGBO(25, 44, 93, 1.0),
                 ),
               ),
               Text(
@@ -52,30 +49,29 @@ class MyAppBar extends StatelessWidget {
                 style: GoogleFonts.quicksand(
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
-                  color: Color.fromRGBO(110, 119, 142, 1.0),
+                  color: const Color.fromRGBO(110, 119, 142, 1.0),
                 ),
               ),
             ],
           ),
           Container(
-            padding: EdgeInsets.all(12.0),
+            padding: const EdgeInsets.all(12.0),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12.0),
+              color: Colors.white,
+              boxShadow: const [
+                BoxShadow(
+                  offset: Offset(4.0, 4.0),
+                  blurRadius: 10,
+                  color: Color.fromRGBO(58, 58, 58, 0.05),
+                ),
+              ],
+            ),
             child: SvgPicture.asset(
               'lib/ui/assets/icons/calendar.svg',
               height: 24,
               width: 24,
-              color: Color.fromRGBO(25, 44, 93, 1.0),
-            ),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12.0),
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  offset: Offset(4.0, 4.0),
-                  blurRadius: 10,
-                  spreadRadius: 0,
-                  color: Color.fromRGBO(58, 58, 58, 0.05),
-                ),
-              ],
+              color: const Color.fromRGBO(25, 44, 93, 1.0),
             ),
           ),
         ],

@@ -18,9 +18,9 @@ class LocalProjectModel {
       throw Exception();
     }
     return LocalProjectModel(
-      id: json['id'],
-      name: json['name'],
-      color: json['color'],
+      id: json['id'].toString(),
+      name: json['name'].toString(),
+      color: json['color'].toString(),
     );
   }
 

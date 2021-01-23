@@ -19,17 +19,17 @@ class Name extends StatelessWidget {
             style: GoogleFonts.quicksand(
               fontSize: 24,
               fontWeight: FontWeight.w500,
-              color: Color.fromRGBO(25, 44, 93, 1.0),
+              color: const Color.fromRGBO(25, 44, 93, 1.0),
             ),
             textAlign: TextAlign.start,
           ),
-          SizedBox(height: 4.0),
+          const SizedBox(height: 4.0),
           Text(
             'Você tem 3 tarefas para hoje',
             style: GoogleFonts.quicksand(
               fontSize: 14,
               fontWeight: FontWeight.w500,
-              color: Color.fromRGBO(110, 119, 142, 1.0),
+              color: const Color.fromRGBO(110, 119, 142, 1.0),
             ),
             textAlign: TextAlign.start,
           ),

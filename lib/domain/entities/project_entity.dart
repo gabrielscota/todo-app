@@ -8,7 +8,7 @@ class ProjectEntity extends Equatable {
 
   List get props => [id, name, color];
 
-  ProjectEntity({
+  const ProjectEntity({
     @required this.id,
     @required this.name,
     @required this.color,

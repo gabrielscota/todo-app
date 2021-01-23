@@ -1,5 +1,5 @@
-import './task_viewmodel.dart';
 import './project_viewmodel.dart';
+import './task_viewmodel.dart';
 
 abstract class HomePresenter {
   Stream<List<TaskViewModel>> get tasksStream;

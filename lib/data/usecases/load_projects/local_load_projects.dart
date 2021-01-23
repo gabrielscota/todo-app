@@ -41,8 +41,8 @@ class LocalLoadProjects implements LoadProjects {
   }
 
   List<ProjectEntity> _mapToEntity(dynamic list) => list
-      .map<ProjectEntity>((json) => LocalProjectModel.fromJson(json).toEntity())
-      .toList();
+      .map<ProjectEntity>((json) => LocalProjectModel.fromJson(json as Map).toEntity())
+      .toList() as List<ProjectEntity>;
 
   List<Map> _mapToJson(List<ProjectEntity> list) => list
       .map((entity) => LocalProjectModel.fromEntity(entity).toJson())

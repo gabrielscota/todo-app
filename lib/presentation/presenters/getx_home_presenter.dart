@@ -35,6 +35,7 @@ class GetxHomePresenter extends GetxController
                 checked: task.checked,
               ))
           .toList();
+    // ignore: empty_catches
     } catch (e) {}
   }
 
@@ -48,6 +49,7 @@ class GetxHomePresenter extends GetxController
                 color: project.color,
               ))
           .toList();
+    // ignore: empty_catches
     } catch (e) {}
   }
 

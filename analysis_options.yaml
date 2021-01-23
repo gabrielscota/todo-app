@@ -1,0 +1,6 @@
+include: package:lint/analysis_options.yaml
+
+linter:
+  rules:
+    annotate_overrides: false
+    directives_ordering: true

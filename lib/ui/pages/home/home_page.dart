@@ -10,9 +10,8 @@ import './home.dart';
 class HomePage extends StatefulWidget {
   final HomePresenter presenter;
 
-  HomePage({@required this.presenter});
+  const HomePage({@required this.presenter});
 
-  @override
   _HomePageState createState() => _HomePageState();
 }
 
@@ -20,14 +19,14 @@ class _HomePageState extends State<HomePage> with NavigationManager {
   bool isAddingTask = false;
   FocusNode focusNode = FocusNode();
 
-  void handleAddingTask(bool value) {
+  void handleAddingTask({bool value}) {
     setState(() => isAddingTask = value);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(252, 252, 252, 1.0),
+      backgroundColor: const Color.fromRGBO(252, 252, 252, 1.0),
       body: Builder(
         builder: (context) {
           handleNavigation(widget.presenter.navigateToStream, clear: true);
@@ -49,7 +48,7 @@ class _HomePageState extends State<HomePage> with NavigationManager {
                         style: GoogleFonts.quicksand(
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
-                          color: Color.fromRGBO(25, 44, 93, 1.0),
+                          color: const Color.fromRGBO(25, 44, 93, 1.0),
                         ),
                       ),
                     ),
@@ -63,71 +62,69 @@ class _HomePageState extends State<HomePage> with NavigationManager {
                   child: Stack(
                     children: [
                       SingleChildScrollView(
-                        physics: NeverScrollableScrollPhysics(),
+                        physics: const NeverScrollableScrollPhysics(),
                         child: ConstrainedBox(
                           constraints: BoxConstraints(
                             minHeight: MediaQuery.of(context).size.height,
                           ),
                           child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.max,
                             children: [
-                              MyAppBar(),
-                              Name(),
-                              snapshot.data != null ? Projects() : SizedBox(),
-                              snapshot.data != null
-                                  ? Tasks(presenter: widget.presenter)
-                                  : Center(
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 32.0, vertical: 64.0),
-                                        child: Column(
-                                          children: [
-                                            SvgPicture.asset(
-                                              'lib/ui/assets/illustrations/add_notes.svg',
-                                              width: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  0.5,
-                                              fit: BoxFit.fitWidth,
-                                            ),
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      vertical: 24.0),
-                                              child: Text(
-                                                'Parece que você ainda não tem nenhuma tarefa, que tal criarmos a primeira?',
-                                                style: GoogleFonts.quicksand(
-                                                  fontSize: 16,
-                                                  fontWeight: FontWeight.w500,
-                                                  color: Color.fromRGBO(
-                                                      110, 119, 142, 1.0),
-                                                ),
-                                                textAlign: TextAlign.center,
-                                              ),
-                                            ),
-                                            InkWell(
-                                              onTap: focusNode.requestFocus,
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              highlightColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              child: Text(
-                                                'Criar nova tarefa',
-                                                style: GoogleFonts.quicksand(
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.w600,
-                                                  color: Color.fromRGBO(
-                                                      42, 92, 222, 1.0),
-                                                ),
-                                                textAlign: TextAlign.center,
-                                              ),
-                                            ),
-                                          ],
+                              const MyAppBar(),
+                              const Name(),
+                              if (snapshot.data != null) const Projects(),
+                              if (snapshot.data != null)
+                                Tasks(presenter: widget.presenter)
+                              else
+                                Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 32.0, vertical: 64.0),
+                                    child: Column(
+                                      children: [
+                                        SvgPicture.asset(
+                                          'lib/ui/assets/illustrations/add_notes.svg',
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.5,
+                                          fit: BoxFit.fitWidth,
                                         ),
-                                      ),
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: 24.0),
+                                          child: Text(
+                                            'Parece que você ainda não tem nenhuma tarefa, que tal criarmos a primeira?',
+                                            style: GoogleFonts.quicksand(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w500,
+                                              color: const Color.fromRGBO(
+                                                  110, 119, 142, 1.0),
+                                            ),
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ),
+                                        InkWell(
+                                          onTap: focusNode.requestFocus,
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          child: Text(
+                                            'Criar nova tarefa',
+                                            style: GoogleFonts.quicksand(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w600,
+                                              color: const Color.fromRGBO(
+                                                  42, 92, 222, 1.0),
+                                            ),
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ),
+                                      ],
                                     ),
+                                  ),
+                                ),
                               SizedBox(
                                 height:
                                     MediaQuery.of(context).size.height * 0.18,
@@ -139,12 +136,12 @@ class _HomePageState extends State<HomePage> with NavigationManager {
                       GestureDetector(
                         onTap: Navigator.of(context).focusScopeNode.unfocus,
                         child: AnimatedOpacity(
-                          duration: Duration(milliseconds: 200),
+                          duration: const Duration(milliseconds: 200),
                           opacity: isAddingTask ? 1.0 : 0.0,
                           child: Visibility(
                             visible: isAddingTask,
                             child: Container(
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 gradient: LinearGradient(
                                   begin: Alignment.topCenter,
                                   end: Alignment.bottomCenter,
@@ -163,16 +160,18 @@ class _HomePageState extends State<HomePage> with NavigationManager {
                         left: 0,
                         right: 0,
                         bottom: 0,
-                        child: AddTask(handleAddingTask: handleAddingTask, focusNode: focusNode),
+                        child: AddTask(
+                            handleAddingTask: handleAddingTask,
+                            focusNode: focusNode),
                       ),
                     ],
                   ),
                 );
               }
 
-              return Center(
+              return const Center(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 24.0),
+                  padding: EdgeInsets.symmetric(vertical: 24.0),
                   child: CircularProgressIndicator(
                     valueColor: AlwaysStoppedAnimation<Color>(
                       Color.fromRGBO(58, 58, 58, 1.0),

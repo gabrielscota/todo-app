@@ -27,17 +27,17 @@ class LocalTaskModel {
       throw Exception();
     }
     return LocalTaskModel(
-      id: json['id'],
-      title: json['title'],
-      project: json['project'] != null ? json['project'] : null,
-      date: DateTime.parse(json['date']),
-      note: json['note'],
-      subTasks: json['subTasks'] != null
-          ? json['subTasks']
+      id: json['id'].toString(),
+      title: json['title'].toString(),
+      project: json['project'] as LocalProjectModel ??
+          json['project'] as LocalProjectModel,
+      date: DateTime.parse(json['date'].toString()),
+      note: json['note'].toString(),
+      subTasks: json['subTasks'] as List<LocalSubTaskModel> ??
+          json['subTasks']
               .map<LocalSubTaskModel>(
-                  (subTaskJson) => LocalTaskModel.fromJson(subTaskJson))
-              .toList()
-          : null,
+                  (subTaskJson) => LocalTaskModel.fromJson(subTaskJson as Map))
+              .toList() as List<LocalSubTaskModel>,
       checked: json['checked'].toLowerCase() == 'true',
     );
   }

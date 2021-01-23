@@ -7,7 +7,7 @@ import './components.dart';
 class Tasks extends StatelessWidget {
   final HomePresenter presenter;
 
-  Tasks({this.presenter});
+  const Tasks({this.presenter});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class Tasks extends StatelessWidget {
             style: GoogleFonts.quicksand(
               fontSize: 24,
               fontWeight: FontWeight.w500,
-              color: Color.fromRGBO(25, 44, 93, 1.0),
+              color: const Color.fromRGBO(25, 44, 93, 1.0),
             ),
             textAlign: TextAlign.start,
           ),
@@ -31,11 +31,11 @@ class Tasks extends StatelessWidget {
         Container(
           height: MediaQuery.of(context).size.height * 0.25,
           width: MediaQuery.of(context).size.width,
-          padding: EdgeInsets.only(left: 24.0, right: 24.0, bottom: 16.0),
+          padding: const EdgeInsets.only(left: 24.0, right: 24.0, bottom: 16.0),
           child: ListView.builder(
             itemCount: 3,
-            itemBuilder: (context, index) => TaskTile(),
-            physics: NeverScrollableScrollPhysics(),
+            itemBuilder: (context, index) => const TaskTile(),
+            physics: const NeverScrollableScrollPhysics(),
           ),
         ),
       ],

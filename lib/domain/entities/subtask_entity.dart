@@ -8,7 +8,7 @@ class SubTaskEntity extends Equatable {
 
   List get props => [id, title, checked];
 
-  SubTaskEntity({
+  const SubTaskEntity({
     @required this.id,
     @required this.title,
     @required this.checked,

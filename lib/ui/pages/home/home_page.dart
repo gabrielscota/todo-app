@@ -1,9 +1,9 @@
-import 'package:ToDo/ui/helpers/helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
+import '../../helpers/helpers.dart';
 import '../../mixins/mixins.dart';
 import './components/components.dart';
 import './home.dart';
@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> with NavigationManager {
             builder: (context, snapshot) {
               if (snapshot.hasError) {
                 return Center(
-                  child: RaisedButton(
+                  child: ElevatedButton(
                     onPressed: widget.presenter.loadTasksData,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
